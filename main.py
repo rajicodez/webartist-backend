@@ -1,11 +1,13 @@
 import os
+import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_cohere import CohereEmbeddings
 from langchain_pinecone import PineconeVectorStore
-from langchain_classic.chains.retrieval_qa.base import RetrievalQA 
+# FIXED: The correct import for the legacy chain
+from langchain_classic.chains import RetrievalQA 
 from langchain_core.prompts import PromptTemplate
 from dotenv import load_dotenv
 
@@ -22,12 +24,15 @@ app.add_middleware(
 )
 
 # 1. SETUP AI MODELS
-embeddings = CohereEmbeddings(model="embed-english-v3.0", cohere_api_key=os.getenv("COHERE_API_KEY"))
+embeddings = CohereEmbeddings(
+    model="embed-english-v3.0", 
+    cohere_api_key=os.getenv("COHERE_API_KEY")
+)
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
     google_api_key=os.getenv("GEMINI_API_KEY"),
-    temperature=0.3 # Lower temperature = more factual/professional
+    temperature=0.3
 )
 
 vectorstore = PineconeVectorStore(
@@ -36,7 +41,7 @@ vectorstore = PineconeVectorStore(
     pinecone_api_key=os.getenv("PINECONE_API_KEY")
 )
 
-# 2. CREATE THE PERSONA (Updated Growth Partner Prompt)
+# 2. CREATE THE PERSONA (Your Custom Prompt)
 template = """
 You are the AI Growth Partner for WebArtist. You are not a robot; you are a warm, intelligent, and empathetic consultant. 
 Your goal is to connect with the user's vision and explain how WebArtist can help them grow.
@@ -48,6 +53,7 @@ GUIDELINES:
 3. If asked about pricing, explain that we provide customized solutions for every business, so pricing varies. Encourage them to contact us for a tailored quote.
 4. Do not use complex jargon without explaining it simply.
 5. Keep answers concise but friendly.
+6. FORMATTING: Use **Bold** for key terms and bullet points for lists.
 
 Context: {context}
 
@@ -63,7 +69,7 @@ qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
     chain_type="stuff",
     retriever=vectorstore.as_retriever(),
-    chain_type_kwargs={"prompt": QA_CHAIN_PROMPT} # <--- Inject the persona here
+    chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
 )
 
 class Query(BaseModel):
@@ -75,5 +81,4 @@ async def chat_endpoint(query: Query):
     return {"answer": response['result']}
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -1,0 +1,45 @@
+WHO WE ARE:
+WebArtist is not just a software agency; we are your technical partners in growth.
+Born from a frustration with "silent" websites that look pretty but do nothing, we established a specialized R&D engineering team.
+We are a collective of young, talented individuals from various domains like Data Science, Software Engineering, Cyber Security, and Cloud Computing.
+We are dreamers who love building engines for other dreamers.
+
+OUR MISSION:
+To democratize Artificial Intelligence. We believe powerful data tools shouldn't be a luxury for giant corporations; they should be the standard for every ambitious business.
+
+OUR PHILOSOPHY (THE HEART):
+We believe a website is not code; it is your digital home. It is where your customers meet you.
+We don't treat clients as "tickets." We treat them as partners. When you win, we win.
+We replace "gut feeling" with data-driven certainty, helping founders sleep better at night knowing their business is optimized.
+
+OUR SERVICES (WHAT WE BUILD):
+1. Intelligent Web Platforms:
+   - We don't build digital brochures. We build platforms that listen, think, and adapt.
+   - Your website will track user behavior to understand what they want before they even ask.
+   
+2. RAG AI Agents (The 24/7 Team Member):
+   - Imagine an employee who knows every PDF, policy, and product in your company and never sleeps.
+   - We build custom AI chatbots that answer your customers instantly with 100% accuracy, freeing you to focus on growing the business.
+
+3. Predictive Analytics (The Crystal Ball):
+   - We use historical data to forecast your future sales and identify customers who might leave (churn).
+   - This isn't just a dashboard; it's a roadmap for your future decisions.
+
+4. Secure Cloud Architecture:
+   - Built by Cyber Security and Cloud specialists, our platforms are fortified against modern threats and scale automatically as you grow.
+
+PRICING & INVESTMENT:
+- We do not have a fixed price list because we do not build "cookie-cutter" products.
+- Every business is unique, with its own soul and challenges. A hospital needs a different engine than a fashion brand.
+- We offer customized solutions tailored specifically to your budget and goals.
+- To get a quote, please contact us directly. We will sit down with you, understand your vision, and design a package that delivers maximum ROI.
+
+WHY CHOOSE US:
+- Multi-Disciplinary Experts: Our team spans Data Science, Software Engineering, Cloud, and Security.
+- Zero Legacy Code: We build on the bleeding edge (Next.js, Python, Vector DBs).
+- R&D DNA: We spend 20% of our time researching new AI so you stay 2 years ahead of the competition.
+- Empathy First: We speak human, not just code. We explain complex tech in simple terms because we want you to feel empowered, not overwhelmed.
+
+CONTACT:
+- Ready to upgrade? Visit the /contact page on our website.
+- Let's build the future together.
